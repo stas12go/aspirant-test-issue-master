@@ -1,0 +1,23 @@
+{% extends 'main.html.twig' %}
+
+{% block title %}{{ trailers | length + 1 }} iTunes Movie trailers{% endblock %}
+
+{% block content %}
+    <div class="container w-50">
+        <div class="d-flex flex-row justify-content-end align-items-baseline">
+            <a href="/" class="btn btn-danger my-3">Go Back</a>
+        </div>
+
+        <div class="card">
+        <div class="card-body">
+            <h2>{{ movie.title }}</h2>
+        
+            <p class="card-text">{{ movie.description }}</p>
+            <p class="card-text"><a href="{{ movie.link }}" class="btn btn-primary">Read more...</a></p>
+        </div>
+        <img src="{{ movie.link }}/images/background.jpg" class="card-img-bottom" alt="Background Image">
+        </div>
+
+        
+    </div>
+{% endblock %}
