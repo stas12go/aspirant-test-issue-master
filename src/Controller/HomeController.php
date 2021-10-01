@@ -5,12 +5,9 @@ declare(strict_types=1);
 namespace App\Controller;
 
 use App\Entity\Movie;
-use App\Repository\MovieRepository;
-use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\EntityManagerInterface;
-use Doctrine\ORM\EntityNotFoundException;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Slim\Exception\HttpBadRequestException;
@@ -41,8 +38,6 @@ class HomeController
         } catch (\Exception $e) {
             throw new HttpBadRequestException($request, $e->getMessage(), $e);
         }
-
-        // dd($this->fetchData()->toArray());
 
         $response->getBody()->write($data);
 
